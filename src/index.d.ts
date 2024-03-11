@@ -90,7 +90,7 @@ export declare class Results {
     lostMessages: number[]
   } | { error: string } | undefined;
 
-  getScores: () => {
+  getScores: (summary?: any) => {
     [key: string]: {
       points: number;
       classificationIdx: 0 | 1 | 2 | 3 | 4;

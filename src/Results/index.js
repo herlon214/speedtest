@@ -75,7 +75,13 @@ class Results {
     );
   }
 
-  getScores = () => this.#scoresCalc.getScores(this.getSummary());
+  getScores = (summary) => {
+    if (summary == null) {
+      summary = this.getSummary();
+    }
+    
+    return this.#scoresCalc.getScores(summary);
+  }
 
   // Internal state
   #config;

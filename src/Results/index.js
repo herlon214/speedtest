@@ -76,9 +76,15 @@ class Results {
   }
 
   getScores = (summary) => {
-    if (summary == null) {
+    if (summary != null) {
+      summary = {
+      ...this.getSummary(),
+      ...summary,
+      }
+    } else {
       summary = this.getSummary();
     }
+
     
     return this.#scoresCalc.getScores(summary);
   }

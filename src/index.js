@@ -328,7 +328,7 @@ class MeasurementEngine {
           meas,
           results
         ) => {
-          console.log("server details", engine.serverDetails())
+          console.log('server details', engine.serverDetails());
 
           this.serverDetails = engine.serverDetails();
 

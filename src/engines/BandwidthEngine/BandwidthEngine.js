@@ -147,6 +147,21 @@ class BandwidthMeasurementEngine {
   #currentFetchPromise = undefined;
   #currentNextMsmTimeoutId = undefined;
 
+  #serverDetails = {
+    'ASN': '',
+    'City': '',
+    'Colo': '',
+    'Country': '',
+    'Ip': '',
+    'Latitude': '',
+    'Longitude': '',
+    'Postalcode': '',
+  };
+
+  get serverDetails() {
+    return this.#serverDetails;
+  }
+
   // Internal methods
   #setRunning(running) {
     if (running !== this.#running) {
@@ -275,6 +290,18 @@ class BandwidthMeasurementEngine {
       })
       .then(r => {
         this.getServerTime && (serverTime = this.getServerTime(r));
+
+        this.#serverDetails = {
+          'ASN': r.headers.get('Cf-Meta-Asn'),
+          'City': r.headers.get('Cf-Meta-City'),
+          'Colo': r.headers.get('Cf-Meta-Colo'),
+          'Country': r.headers.get('Cf-Meta-Country'),
+          'Ip': r.headers.get('Cf-Meta-Ip'),
+          'Latitude': r.headers.get('Cf-Meta-Latitude'),
+          'Longitude': r.headers.get('Cf-Meta-Longitude'),
+          'Postalcode': r.headers.get('Cf-Meta-Postalcode'),
+        }
+
         return r;
       })
       .then(r =>

@@ -71,6 +71,8 @@ class MeasurementEngine {
   #config;
   #results;
 
+  #serverDetails;
+
   #measurementId = genMeasId();
   #curMsmIdx = -1;
   #curEngine;
@@ -79,6 +81,10 @@ class MeasurementEngine {
 
   #running = false;
   #finished = false;
+
+  get serverDetails() {
+    return this.#serverDetails;
+  }
 
   // Internal methods
   #setRunning(running) {
@@ -322,6 +328,10 @@ class MeasurementEngine {
           meas,
           results
         ) => {
+          console.log("server details", engine.serverDetails())
+
+          this.serverDetails = engine.serverDetails();
+
           msmResults.results = Object.assign({}, results.down[0]);
           this.onResultsChange({ type });
         };

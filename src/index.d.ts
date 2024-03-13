@@ -121,7 +121,7 @@ declare class SpeedTestEngine {
   onFinish: (results: Results) => void;
   onError: (error: string) => void;
 
-  getServerDetails: () => {
+  readonly serverDetails: {
     ASN: string;
     City: string;
     Colo: string;

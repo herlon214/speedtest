@@ -2422,6 +2422,9 @@ var MeasurementEngine = /*#__PURE__*/function () {
     key: "serverDetails",
     get: function get() {
       return _classPrivateFieldGet(this, _serverDetails);
+    },
+    set: function set(sd) {
+      _classPrivateFieldSet(this, _serverDetails, sd);
     }
   }]);
   return MeasurementEngine;

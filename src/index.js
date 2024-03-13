@@ -86,6 +86,10 @@ class MeasurementEngine {
     return this.#serverDetails;
   }
 
+  set serverDetails(sd) {
+    this.#serverDetails = sd;
+  }
+
   // Internal methods
   #setRunning(running) {
     if (running !== this.#running) {

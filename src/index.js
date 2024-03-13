@@ -328,9 +328,7 @@ class MeasurementEngine {
           meas,
           results
         ) => {
-          console.log('server details', engine.serverDetails());
-
-          this.serverDetails = engine.serverDetails();
+          this.serverDetails = engine.serverDetails;
 
           msmResults.results = Object.assign({}, results.down[0]);
           this.onResultsChange({ type });

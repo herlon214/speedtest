@@ -2624,8 +2624,7 @@ function _next2() {
         credentials: _classPrivateFieldGet(this, _config).includeCredentials ? 'include' : undefined
       };
       engine.onMeasurementResult = engine.onNewMeasurementStarted = function (meas, results) {
-        console.log('server details', engine.serverDetails());
-        _this4.serverDetails = engine.serverDetails();
+        _this4.serverDetails = engine.serverDetails;
         msmResults.results = Object.assign({}, results.down[0]);
         _this4.onResultsChange({
           type: type

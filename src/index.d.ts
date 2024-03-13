@@ -72,16 +72,6 @@ export declare class Results {
     packetLoss?: number;
   };
 
-  getServerDetails: () => {
-    ASN: string;
-    City: string;
-    Colo: string;
-    Country: string;
-    Ip: string;
-    Latitude: string;
-    Longitude: string;
-    Postalcode: string;
-  };
   getUnloadedLatency: () => number | undefined;
   getUnloadedJitter: () => number | undefined;
   getUnloadedLatencyPoints: () => number[];
@@ -130,6 +120,17 @@ declare class SpeedTestEngine {
   onResultsChange: ({ type: string }) => void;
   onFinish: (results: Results) => void;
   onError: (error: string) => void;
+
+  getServerDetails: () => {
+    ASN: string;
+    City: string;
+    Colo: string;
+    Country: string;
+    Ip: string;
+    Latitude: string;
+    Longitude: string;
+    Postalcode: string;
+  };
 }
 
 export default SpeedTestEngine;

@@ -667,14 +667,14 @@ var BandwidthMeasurementEngine = /*#__PURE__*/function () {
     _classPrivateFieldInitSpec(this, _serverDetails$1, {
       writable: true,
       value: {
-        'ASN': '',
-        'City': '',
-        'Colo': '',
-        'Country': '',
-        'Ip': '',
-        'Latitude': '',
-        'Longitude': '',
-        'Postalcode': ''
+        ASN: '',
+        City: '',
+        Colo: '',
+        Country: '',
+        Ip: '',
+        Latitude: '',
+        Longitude: '',
+        Postalcode: ''
       }
     });
     if (!_measurements2) throw new Error('Missing measurements argument');
@@ -889,14 +889,14 @@ function _nextMeasurement2() {
   }).then(function (r) {
     _this3.getServerTime && (serverTime = _this3.getServerTime(r));
     _classPrivateFieldSet(_this3, _serverDetails$1, {
-      'ASN': r.headers.get('Cf-Meta-Asn'),
-      'City': r.headers.get('Cf-Meta-City'),
-      'Colo': r.headers.get('Cf-Meta-Colo'),
-      'Country': r.headers.get('Cf-Meta-Country'),
-      'Ip': r.headers.get('Cf-Meta-Ip'),
-      'Latitude': r.headers.get('Cf-Meta-Latitude'),
-      'Longitude': r.headers.get('Cf-Meta-Longitude'),
-      'Postalcode': r.headers.get('Cf-Meta-Postalcode')
+      ASN: r.headers.get('Cf-Meta-Asn'),
+      City: r.headers.get('Cf-Meta-City'),
+      Colo: r.headers.get('Cf-Meta-Colo'),
+      Country: r.headers.get('Cf-Meta-Country'),
+      Ip: r.headers.get('Cf-Meta-Ip'),
+      Latitude: r.headers.get('Cf-Meta-Latitude'),
+      Longitude: r.headers.get('Cf-Meta-Longitude'),
+      Postalcode: r.headers.get('Cf-Meta-Postalcode')
     });
     return r;
   }).then(function (r) {
@@ -2624,7 +2624,7 @@ function _next2() {
         credentials: _classPrivateFieldGet(this, _config).includeCredentials ? 'include' : undefined
       };
       engine.onMeasurementResult = engine.onNewMeasurementStarted = function (meas, results) {
-        console.log("server details", engine.serverDetails());
+        console.log('server details', engine.serverDetails());
         _this4.serverDetails = engine.serverDetails();
         msmResults.results = Object.assign({}, results.down[0]);
         _this4.onResultsChange({

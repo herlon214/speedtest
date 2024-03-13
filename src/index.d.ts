@@ -18,6 +18,17 @@ export type MeasurementConfig =
       connectionTimeout?: number;
     };
 
+export type ServerDetails = {
+  ASN: string;
+  City: string;
+  Colo: string;
+  Country: string;
+  Ip: string;
+  Latitude: string;
+  Longitude: string;
+  Postalcode: string;
+};
+
 export interface ConfigOptions {
   autoStart?: boolean;
 
@@ -121,16 +132,7 @@ declare class SpeedTestEngine {
   onFinish: (results: Results) => void;
   onError: (error: string) => void;
 
-  readonly serverDetails: {
-    ASN: string;
-    City: string;
-    Colo: string;
-    Country: string;
-    Ip: string;
-    Latitude: string;
-    Longitude: string;
-    Postalcode: string;
-  };
+  readonly serverDetails: ServerDetails;
 }
 
 export default SpeedTestEngine;
